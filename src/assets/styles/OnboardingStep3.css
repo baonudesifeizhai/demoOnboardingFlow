@@ -1,0 +1,23 @@
+/* Step 3 Styles */
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  input[type="text"] {
+    background-color: #f9f9f9;
+  }
+  
+  input[type="date"] {
+    background-color: #f9f9f9;
+  }
+  
+  button {
+    background-color: #2ecc71;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  

@@ -1,0 +1,19 @@
+/* Step 1 Styles */
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input[type="email"], input[type="password"] {
+    background-color: #f9f9f9;
+  }
+  
+  button {
+    background-color: #3498db;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  

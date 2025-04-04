@@ -1,0 +1,20 @@
+/* Step 2 Styles */
+.step {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  textarea {
+    background-color: #f9f9f9;
+    min-height: 150px;
+  }
+  
+  button {
+    background-color: #f39c12;
+  }
+  
+  button:hover {
+    background-color: #e67e22;
+  }
+  
