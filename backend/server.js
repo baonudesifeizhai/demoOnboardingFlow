@@ -8,8 +8,19 @@ const Config = require('./models/Config');
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// 检查环境变量
+if (!process.env.MONGODB_URI) {
+  console.error('MONGODB_URI is not set in environment variables');
+  process.exit(1);
+}
+
+// CORS 配置
+app.use(cors({
+  origin: ['https://demo-onboarding-flow-9xft.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // MongoDB Connection
@@ -29,7 +40,10 @@ mongoose.connect(MONGODB_URI, {
     await Config.create(Config.getDefaultConfig());
   }
 })
-.catch(err => console.error('MongoDB connection error:', err));
+.catch(err => {
+  console.error('MongoDB connection error:', err);
+  process.exit(1);
+});
 
 // Routes
 app.get('/api/health', (req, res) => {
